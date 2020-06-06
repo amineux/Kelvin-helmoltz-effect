@@ -6,7 +6,7 @@
 
 
 
-# Fichier exercice1.py
+
 '''
 from numpy import *
 from math import *
@@ -37,7 +37,7 @@ plt.show()
 
 #  Dynamique de fluides compressibles - (volume fini)
 
-#  Kelvin Helmholtz Instability (KHI)
+# L'instabilité de Kelvin Helmholtz  (KHI)
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -135,7 +135,7 @@ while (t < tEnd):
     P_grady   = np.maximum(0., np.minimum(1., ( (P-np.roll(P,L,axis=1))/dy)    /(P_grady   + 1.0e-8*(P_grady  ==0)))) * P_grady
     P_grady   = np.maximum(0., np.minimum(1., (-(P-np.roll(P,R,axis=1))/dy)    /(P_grady   + 1.0e-8*(P_grady  ==0)))) * P_grady
 
-  # extrapoltion de la cellule face (en  temps et en espace)
+  # Extrapoltion de la cellule face (en  temps et en espace)
   rho_prime = rho - 0.5*dt *( vx * rho_gradx + rho * vx_gradx + vy * rho_grady + rho * vy_grady)
   rho_XL = rho_prime - rho_gradx * dx/2.  
   rho_XL = np.roll(rho_XL,R,axis=0)
@@ -165,7 +165,7 @@ while (t < tEnd):
   P_YL = np.roll(P_YL,R,axis=1)
   P_YR = P_prime + P_grady * dy/2.
 
-  # ccalculer les états  star (moyenne) 
+  # Calcul des états  star (moyenne) 
   rho_Xstar = 0.5*(rho_XL + rho_XR)
   rho_Ystar = 0.5*(rho_YL + rho_YR)
   momx_Xstar = 0.5*(rho_XL * vx_XL + rho_XR * vx_XR)
