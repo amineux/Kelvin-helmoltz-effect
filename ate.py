@@ -14,7 +14,6 @@ import numpy as np
 import scipy.linalg as sl
 import matplotlib.pyplot as plt
 
-
  model="nh"
  int noslip=0
  float g=9.81
@@ -22,8 +21,6 @@ import matplotlib.pyplot as plt
  int ny=150
  int lx=16
  int ly=8
-
-
 
 plt.plot(x,y,"b-x", label="pas de 1s")
 plt.xlabel("temps (s)") 
@@ -42,7 +39,7 @@ plt.show()
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Parameteres
+# Paramètres
 Nx = 128
 Ny = 128
 boxSizeX = 1.
@@ -222,7 +219,7 @@ while (t < tEnd):
   Energy = Energy + dt * dx * np.roll(flux_en_Y,L,axis=1)
  
 
-  # avancer le temps
+  # Interval de temps (differncede temps)
   t += dt
   
   # dessiner la solution  dans des intervalles de temps (ordinaire)
