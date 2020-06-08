@@ -8,11 +8,7 @@
 
 
 '''
-from numpy import *
-from math import *
-import numpy as np
-import scipy.linalg as sl
-import matplotlib.pyplot as plt
+
 
  model="nh"
  int noslip=0
